@@ -7,6 +7,19 @@ Bit tree is an efficient 4-ary tree representation of a collection of nucleotide
 
 Oftentimes, bit tree representation is more efficient than gzipping or plzipping a kmer collection. Here is its perofrmance on non-canonical kmers of [ERR279856](http://www.ncbi.nlm.nih.gov/sra/?term=ERR279856), as counted by Jellyfish:
 
-`plot`
+![plot of data in the table below](https://github.com/lynxoid/bit_tree_cpp/blob/master/size_vs_k.png )
 
-You can generate the kmers and run your own tests with `run_kmers.sh` script.
+Actual sizes are as such:
+
+k |	as strings |	kmers lzipped |	bit tree
+-----|---:|----:|-----------------------------:
+10 |	9,652,797 |	1,487,340 |	172,601
+12 | 42,347,292 | 11,186,877 |	1,656,921
+14 | 62,011,560 | 17,287,884 | 5,221,649
+16 | 73,145,781 | 20,192,268 | 9,402,177
+18 | 83,236,359 | 22,351,948 | 13,711,825
+20 | 93,328,410 | 24,253,686 | 18,088,297
+22 | 103,522,356 | 25,973,124 | 22,519,457
+24 | 113,811,100 | 27,523,363 | 26,998,329
+
+You can generate the kmers and run your own tests with the `run_kmers.sh` script.
