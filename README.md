@@ -1,5 +1,5 @@
 # bit_tree_cpp
-Bit tree implementation in c++
+Bit tree implementation in C++11
 
 Bit tree is an efficient 4-ary tree representation of a collection of nucleotide strings all of which are of the same length. Construction and binary encoding of a tree are described in detail here:
 
