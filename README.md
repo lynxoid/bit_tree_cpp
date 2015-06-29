@@ -25,3 +25,11 @@ k |	as strings |	kmers lzipped |	bit tree
 For `k=10` (`k=12`), the size of the bit tree was 55 (25) times smaller than the size of the original kmers in plain text (or 11 times smaller than their 2-bit representation). On average, the compression ratio on these tests is 15.15 for bit tree and 4.15 for plzip.
 
 You can generate the kmers and run your own tests with the `run_kmers.sh` script.
+
+### Dependencies
+
+Boost 1.54
+
+### Compilation
+
+make
