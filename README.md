@@ -33,3 +33,9 @@ Boost 1.54
 ### Compilation
 
 make
+
+### TODO
+
+- [ ] using binary kmer representations -- do they improve perofrmance?
+- [ ] using RRR vectors to further compress bit tree binary output
+- [ ] can bit tree data structure be used for kmer access (currently only storage & transmission)
