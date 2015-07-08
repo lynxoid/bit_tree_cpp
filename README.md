@@ -9,7 +9,7 @@ Oftentimes, bit tree representation is more efficient than gzipping or plzipping
 
 [SRR037452](http://www.ncbi.nlm.nih.gov/sra/?term=SRR037452)
 
-<iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/1uBpxYef2ylP_B4O4pAp-ZzWFL7lCpKec6baQ_hm97IQ/pubchart?oid=755340085&amp;format=interactive"></iframe>
+![data for SRR037452](https://github.com/lynxoid/bit_tree_cpp/blob/master/SRR037452_size_vs_k.png)
 
 [ERR279856](http://www.ncbi.nlm.nih.gov/sra/?term=ERR279856)
 
