@@ -5,29 +5,25 @@ Bit tree is an efficient 4-ary tree representation of a collection of nucleotide
 
   C. Kingsford, R. Patro. "[Reference-based compression of short-read sequences using path encoding.](http://bioinformatics.oxfordjournals.org/content/31/12/1920.full)" Bioinformatics. 31(12): 1920-1928. 2015.
 
-Oftentimes, bit tree representation is more efficient than gzipping or plzipping a kmer collection. We ran an experiment were we compared results of plzipping kmer strings (lz line) vs building a bit tree on those same kmers (bit tree line). Some perofrmance numbers on kmers are below (counted by Jellyfish):
+Oftentimes, bit tree representation is more efficient than gzipping or plzipping a kmer collection. We ran an experiment were we compared results of plzipping kmer strings (lz line) vs building a bit tree on those same kmers (bit tree line). Some performance numbers on kmers are below (counted by Jellyfish):
 
 [SRR037452](http://www.ncbi.nlm.nih.gov/sra/?term=SRR037452)
 
 ![data for SRR037452](https://github.com/lynxoid/bit_tree_cpp/blob/master/SRR037452_size_vs_k.png)
 
-[ERR279856](http://www.ncbi.nlm.nih.gov/sra/?term=ERR279856)
 
-![plot of data in the table below](https://github.com/lynxoid/bit_tree_cpp/blob/master/size_vs_k.png )
+Actual sizes are:
 
-
-Actual sizes for ERR279856 are as such:
-
-k |	as strings |	kmers lzipped |	bit tree
+k |	kmers lzipped |	bit tree | bit tree + lz
 -----|---:|----:|-----------------------------:
-10 |	9,652,797 |	1,487,340 |	172,601
-12 | 42,347,292 | 11,186,877 |	1,656,921
-14 | 62,011,560 | 17,287,884 | 5,221,649
-16 | 73,145,781 | 20,192,268 | 9,402,177
-18 | 83,236,359 | 22,351,948 | 13,711,825
-20 | 93,328,410 | 24,253,686 | 18,088,297
-22 | 103,522,356 | 25,973,124 | 22,519,457
-24 | 113,811,100 | 27,523,363 | 26,998,329
+10 |	1,267,692 |		157,377 |		6,083
+12 |		16,768,251 |		2,497,689 |		285,137
+14 |		209,338,609 |		27,138,873 |		20,177,568
+16 |		460,208,443 |		102,499,425 |		86,198,199
+18 |		549,068,270 |		195,150,889 |		158,596,795
+20 |		578,979,167 |		277,692,945 |		217,172,798
+22 |		583,681,685 |		342,331,145 |		258,201,259
+24 |		566,885,773 |		385,700,657 |		282,575,128
 
 For `k=10` (`k=12`), the size of the bit tree was 55 (25) times smaller than the size of the original kmers in plain text (or 11 times smaller than their 2-bit representation). On average, the compression ratio on these tests is 15.15 for bit tree and 4.15 for plzip.
 
