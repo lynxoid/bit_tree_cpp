@@ -5,11 +5,18 @@ Bit tree is an efficient 4-ary tree representation of a collection of nucleotide
 
   C. Kingsford, R. Patro. "[Reference-based compression of short-read sequences using path encoding.](http://bioinformatics.oxfordjournals.org/content/31/12/1920.full)" Bioinformatics. 31(12): 1920-1928. 2015.
 
-Oftentimes, bit tree representation is more efficient than gzipping or plzipping a kmer collection. Here is its performance on non-canonical kmers of [ERR279856](http://www.ncbi.nlm.nih.gov/sra/?term=ERR279856), as counted by Jellyfish:
+Oftentimes, bit tree representation is more efficient than gzipping or plzipping a kmer collection. Some perofrmance numbers on kmers (counted by Jellyfish):
+
+[SRR037452](http://www.ncbi.nlm.nih.gov/sra/?term=SRR037452)
+
+![plot for SRR037452](https://docs.google.com/spreadsheets/d/1uBpxYef2ylP_B4O4pAp-ZzWFL7lCpKec6baQ_hm97IQ/pubchart?oid=755340085&format=interactive)
+
+[ERR279856](http://www.ncbi.nlm.nih.gov/sra/?term=ERR279856)
 
 ![plot of data in the table below](https://github.com/lynxoid/bit_tree_cpp/blob/master/size_vs_k.png )
 
-Actual sizes are as such:
+
+Actual sizes for ERR279856 are as such:
 
 k |	as strings |	kmers lzipped |	bit tree
 -----|---:|----:|-----------------------------:
