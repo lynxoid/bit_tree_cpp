@@ -35,10 +35,26 @@ Boost 1.54
 
 ### Compilation
 
-make
+`make` should just do it (given that you have Boost in an easily discoverable location)
+
+### Running
+
+To compress kmers given in a file kmers.txt (every line is a kmer string; all kmers must be of the same length < 33). If the kmers are not lexicographically sorted, bit_tree will sort them and then compress the set:
+
+```
+bit_tree encode kmers.txt
+```
+
+This will generate a binary file kmers.txt.bt -- a compressed lossless representation of kmers in the set. To decode kmers compressed with bit_tree:
+
+```
+bit_tree decode kmers.txt.bt > recovered_kmers.txt
+```
+
+This will stream out kmers in the original set in a lexicographic order.
 
 ### TODO
 
-- [ ] using binary kmer representations -- do they improve perofrmance?
+- [x] using binary kmer representations -- do they improve perofrmance? the do not
 - [ ] using RRR vectors to further compress bit tree binary output
 - [ ] can bit tree data structure be used for kmer access (currently only storage & transmission)
